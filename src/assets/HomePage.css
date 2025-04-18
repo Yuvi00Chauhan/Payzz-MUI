@@ -1,0 +1,12 @@
+img{
+    width: 100%;
+    height: 200px; /* Adjust height as needed */
+  object-fit: cover; /* or contain depending on your goal */
+  display: block;
+}
+
+.card{
+    border: 1px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+}
