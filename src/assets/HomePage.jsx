@@ -1,17 +1,27 @@
 import React from "react";
 import { Grid, Card, CardContent, CardMedia, Typography, CardActions, Button } from '@mui/material';
-import "./HomePage.css";
+
+import { useNavigate } from "react-router-dom";
 function HomePage() {
+    const navigate = useNavigate();
+  const goMobileRecharge=()=>navigate("/mobo-recharge")
+  const goDTHRecharge=()=>navigate("/DTH-recharge")
+  const goFASTag=()=> navigate("/FASTag-recharge")
+  const goBroadBand=()=>navigate("/broadband-recharge")
+  const goCableTV=()=>navigate("/cable-tv-recharge")
+  const goGasBill=()=>navigate("/gas-bill")
+  const goElecBill=()=>navigate("/electicity-bill")
+  const gowaterBill=()=>navigate("/water-bill")
   
   const cardData = [
-    { title: "Mobile recharge", desc: "📱 Instant mobile recharges at your fingertips.", img: "/mobrech.png" },
-    { title: "FastTag recharge", desc: "🚗 Recharge your FASTag in seconds—no queues, no delays.", img: "/ftag.jpg" },
-    { title: "Broadband recharge", desc: "🌐 Pay your broadband bills quickly and securely online.", img: "/broad.jpg" },
-    { title: "Cable recharge", desc: "📡Recharge your cable TV in seconds—anytime, anywhere.", img: "/cabel.jpg" },
-    { title: "DTH recharge", desc: "📺 Recharge your DTH instantly anytime, anywhere.", img: "dth.png" },
-    { title: "Gas bill", desc: "🔥 Pay your gas bills instantly with secure online payments.", img: "gas.jpg" },
-    { title: "Electicity bill", desc: "💡 Pay your electricity bills anytime, anywhere.", img: "elec.jpg" },
-    { title: "Water bill", desc: "💧 Pay your water bills effortlessly, Stay hydrated and hassle-free.", img: "water.jpg" },
+    { title: "Mobile recharge", desc: "📱 Instant mobile recharges at your fingertips.", img: "/mobrech.png", action: goMobileRecharge },
+    { title: "FASTag recharge", desc: "🚗 Recharge your FASTag in seconds—no queues, no delays.", img: "/ftag.jpg",action: goFASTag },
+    { title: "Broadband recharge", desc: "🌐 Pay your broadband bills quickly and securely online.", img: "/broad.jpg",action:goBroadBand },
+    { title: "Cable recharge", desc: "📡Recharge your cable TV in seconds—anytime, anywhere.", img: "/cabel.jpg",action: goCableTV },
+    { title: "DTH recharge", desc: "📺 Recharge your DTH instantly anytime, anywhere.", img: "dth.png" ,action: goDTHRecharge},
+    { title: "Gas bill", desc: "🔥 Pay your gas bills instantly with secure online payments.", img: "gas.jpg",action:goGasBill },
+    { title: "Electicity bill", desc: "💡 Pay your electricity bills anytime, anywhere.", img: "elec.jpg",action:goElecBill },
+    { title: "Water bill", desc: "💧 Pay your water bills effortlessly, Stay hydrated and hassle-free.", img: "water.jpg",action:gowaterBill },
     
   ];
 
@@ -30,7 +40,8 @@ function HomePage() {
                               component="img"
                               height="140"
                               image={card.img}
-                              alt={card.title} />
+                              alt={card.title} 
+                              />
                           <CardContent>
                               <Typography gutterBottom variant="h5" component="div">
                                   {card.title}
@@ -40,7 +51,7 @@ function HomePage() {
                               </Typography>
                           </CardContent>
                           <CardActions>
-                              <Button size="medium" color="primary">
+                              <Button size="medium" color="primary" onClick={card.action}>
                                   Continue
                               </Button>
                           </CardActions>

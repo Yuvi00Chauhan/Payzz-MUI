@@ -36,102 +36,55 @@ function Register() {
   };
 
   return (
-    <Box display="flex" flexDirection="column" minHeight="88vh" >
-      <Container
-        // maxWidth="sm"
-        // sx={{
-        //   flexGrow: 1,
-        //   mt: 8,
-        // }}
-      >
-        <div className="card" elevation={3} >
+    <Box marginTop={"80px"}>
+      <Container maxWidth="sm" > 
+        <Paper elevation={4} sx={{ p: 2 }}>
           <Typography variant="h4" gutterBottom align="center">
             Register with Payzz
           </Typography>
           <Box component="form" onSubmit={signup}>
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  name="fname"
-                  label="First Name"
-                  variant="outlined"
-                  fullWidth
-                  required
-                />
+              <Grid item xs={12}>
+                <TextField name="fname" label="First Name" fullWidth required />
               </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  name="lname"
-                  label="Last Name"
-                  variant="outlined"
-                  fullWidth
-                  required
-                />
+              <Grid item xs={12}>
+                <TextField name="lname" label="Last Name" fullWidth required />
               </Grid>
               <Grid item xs={12}>
                 <TextField
                   name="dob"
                   label="Date of Birth"
                   type="date"
-                  variant="outlined"
                   fullWidth
                   required
                   InputLabelProps={{ shrink: true }}
                 />
               </Grid>
               <Grid item xs={12}>
-                <TextField
-                  name="phone"
-                  label="Phone Number"
-                  type="tel"
-                  variant="outlined"
-                  fullWidth
-                  required
-                />
+                <TextField name="phone" label="Phone Number" type="tel" fullWidth required />
               </Grid>
               <Grid item xs={12}>
-                <TextField
-                  name="email"
-                  label="Email Address"
-                  type="email"
-                  variant="outlined"
-                  fullWidth
-                  required
-                />
+                <TextField name="email" label="Email" type="email" fullWidth required />
               </Grid>
               <Grid item xs={12}>
-                <TextField
-                  name="pass"
-                  label="Password"
-                  type="password"
-                  variant="outlined"
-                  fullWidth
-                  required
-                />
+                <TextField name="pass" label="Password" type="password" fullWidth required />
               </Grid>
               <Grid item xs={12}>
-                <TextField
-                  name="cpass"
-                  label="Confirm Password"
-                  type="password"
-                  variant="outlined"
-                  fullWidth
-                  required
-                />
+                <TextField name="cpass" label="Confirm Password" type="password" fullWidth required />
               </Grid>
               <Grid item xs={12}>
-                <Button type="submit" variant="contained" color="primary" fullWidth>
+                <Button type="submit" variant="contained" fullWidth>
                   Register
                 </Button>
               </Grid>
               <Grid item xs={12}>
-                <Button type="button" variant="contained" color="primary" fullWidth>
+                <Button type="button" variant="outlined" fullWidth>
                   Login
                 </Button>
               </Grid>
             </Grid>
           </Box>
-        </div>
+        </Paper>
       </Container>
     </Box>
   );

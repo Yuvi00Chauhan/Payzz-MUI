@@ -1,15 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Box, Typography, Stack, Button } from "@mui/material";
 
 // import { useNavigate } from "react-router-dom";
 
 function Footer() {
-//   const navigate = useNavigate();
+  const navigate = useNavigate();
 
-//   const goHome = () => navigate("/home");
-//   const goFeatures = () => navigate("/features");
-//   const goFAQ = () => navigate("/faq");
-//   const goAbout = () => navigate("/about");
+  const goHome = () => navigate("/home");
+  const goFeatures = () => navigate("/feature");
+  const goFAQ = () => navigate("/frequently-asked");
+  const goAbout = () => navigate("/about");
 
   return (
     <Box
@@ -36,16 +37,16 @@ function Footer() {
 
       <Stack direction="row" spacing={2} sx={{top:"10px", bottom:"=10px"}}>
         <Button  color="inherit" 
-         sx={{ textTransform: "none"}}>
+         sx={{ textTransform: "none"}} onClick={goHome}>
           Home
         </Button>
-        <Button  color="inherit" sx={{ textTransform: "none" }}>
+        <Button  color="inherit" sx={{ textTransform: "none" }} onClick={goFeatures}>
           Features
         </Button>
-        <Button  color="inherit" sx={{ textTransform: "none" }}>
+        <Button  color="inherit" sx={{ textTransform: "none" }} onClick={goFAQ}>
           FAQs
         </Button>
-        <Button  color="inherit" sx={{ textTransform: "none" }}>
+        <Button  color="inherit" sx={{ textTransform: "none" }}onClick={goAbout}>
           About
         </Button>
       </Stack>
