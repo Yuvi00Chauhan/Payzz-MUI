@@ -8,10 +8,12 @@ import {
   Box,
   Paper,
 } from "@mui/material";
-
+import { useNavigate } from "react-router-dom";
 function Register() {
+  const navigate=useNavigate();
+  const handleLogin=()=>navigate("/user-auth-login")
   const signup = (event) => {
-    event.preventDefault();
+    event.preventDefault();s
 
     const fname = event.target.fname.value;
     const lname = event.target.lname.value;
@@ -78,7 +80,7 @@ function Register() {
                 </Button>
               </Grid>
               <Grid item xs={12}>
-                <Button type="button" variant="outlined" fullWidth>
+                <Button type="button" variant="outlined" fullWidth onClick={handleLogin}>
                   Login
                 </Button>
               </Grid>

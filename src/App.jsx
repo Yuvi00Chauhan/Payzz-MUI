@@ -17,6 +17,7 @@ import CableTV from "./assets/CableTV";
 import GasBill from "./assets/GasBill";
 import ElectricityBill from "./assets/ElectricityBill";
 import WaterBill from "./assets/WaterBill";
+import Login from "./assets/Login";
 function App() {
   return (
     <>
@@ -49,6 +50,7 @@ function App() {
             <Route path="/gas-bill" element={<GasBill/> } />
             <Route path="/electicity-bill" element={<ElectricityBill/> } />
             <Route path="/water-bill" element={<WaterBill/> } />
+            <Route path="/user-auth-login" element={<Login/> } />
           </Routes>
         </div>
         <Footer />

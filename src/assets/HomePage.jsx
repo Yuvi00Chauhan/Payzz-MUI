@@ -13,6 +13,7 @@ function HomePage() {
   const goElecBill=()=>navigate("/electicity-bill")
   const gowaterBill=()=>navigate("/water-bill")
   
+  
   const cardData = [
     { title: "Mobile recharge", desc: "📱 Instant mobile recharges at your fingertips.", img: "/mobrech.png", action: goMobileRecharge },
     { title: "FASTag recharge", desc: "🚗 Recharge your FASTag in seconds—no queues, no delays.", img: "/ftag.jpg",action: goFASTag },

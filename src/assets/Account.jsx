@@ -22,9 +22,7 @@ function Account() {
     joined: "March 2024",
   };
 
-  const handleLogout = () => {
-    navigate("/login");
-  };
+  const handleLogout=()=>navigate("/user-auth-login")
 
   return (
     <Container maxWidth="sm" sx={{ display: "flex", alignItems: "center", justifyContent: "center", pt: 6 }}>
