@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   Container,
   Box,
@@ -14,6 +15,7 @@ export default function Login() {
   const handleLogin = (event) => {
     event.preventDefault();
     alert("Logged in successfully!");
+    navigate("/home");
   };
 
   return (

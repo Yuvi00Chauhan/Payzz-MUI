@@ -9,19 +9,20 @@ import {
   Paper,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-function Register() {
-  const navigate=useNavigate();
-  const handleLogin=()=>navigate("/user-auth-login")
-  const signup = (event) => {
-    event.preventDefault();s
 
-    const fname = event.target.fname.value;
-    const lname = event.target.lname.value;
-    const dob = event.target.dob.value;
-    const phone = event.target.phone.value;
-    const email = event.target.email.value;
-    const pass = event.target.pass.value;
-    const cpass = event.target.cpass.value;
+function Register() {
+  const navigate = useNavigate();
+
+  const handleLogin = () => navigate("/user-auth-login");
+
+  const signup = (event) => {
+    event.preventDefault();
+
+    // ✅ Grab values from the form
+    const form = event.target;
+    const dob = form.dob.value;
+    const pass = form.pass.value;
+    const cpass = form.cpass.value;
 
     const age = new Date().getFullYear() - new Date(dob).getFullYear();
     if (age < 18) {
@@ -35,15 +36,17 @@ function Register() {
     }
 
     alert("Registration successful!");
+    navigate("/user-auth-login");
   };
 
   return (
     <Box marginTop={"80px"}>
-      <Container maxWidth="sm" > 
+      <Container maxWidth="sm">
         <Paper elevation={4} sx={{ p: 2 }}>
           <Typography variant="h4" gutterBottom align="center">
             Register with Payzz
           </Typography>
+
           <Box component="form" onSubmit={signup}>
             <Grid container spacing={2}>
               <Grid item xs={12}>

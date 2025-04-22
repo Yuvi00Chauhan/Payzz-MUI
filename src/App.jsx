@@ -19,6 +19,7 @@ import ElectricityBill from "./assets/ElectricityBill";
 import WaterBill from "./assets/WaterBill";
 import Login from "./assets/Login";
 function App() {
+  
   return (
     <>
       {/* <Navbar /> */}
@@ -31,7 +32,7 @@ function App() {
   function MainContent() {
     return (
       <div className="App">
-        <Navbar />
+       <Navbar  />
         <div className="app-container">
           <Routes>
             <Route path="/" element={<Navigate to="/register" />} />
